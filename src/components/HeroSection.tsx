@@ -1,318 +1,187 @@
-import { motion } from "framer-motion";
-
-// Asset URLs - These will need to be downloaded from the Figma plugin server
-// For now, using placeholder paths
-const imgClientImageOne = "/assets/client-1.png";
-const imgClientImageTwo = "/assets/client-2.png";
-const imgClientImageThree = "/assets/client-3.png";
+// Asset paths from Figma design
+const imgClientImageOne = "/assets/Client Image One.png";
+const imgClientImageTwo = "/assets/Client Image Two.png";
+const imgClientImageThree = "/assets/Client Image Three.png";
 const imgImageBlockImageBuilding = "/assets/building.png";
-const imgGroup = "/assets/star-mask-1.svg";
-const imgGroup1 = "/assets/star-mask-2.svg";
-const imgGroup2 = "/assets/star-content.svg";
-const imgHwcWmEsAslmXx2S3Fpw22VFzq5KSvg = "/assets/plus-icon.svg";
-const imgYiMrHJlwikn3LzDrF5JDyGnRe8Svg = "/assets/arrow-down.svg";
-const imgSvg = "/assets/arrow-diagonal.svg";
-const imgFmfUPpgFemm7Le8JZm8P2Rj8GMeSvg = "/assets/shape-icon.svg";
-
-// Animation variants
-const fadeInUp = {
-  hidden: { opacity: 0, y: 60 },
-  visible: { 
-    opacity: 1, 
-    y: 0,
-    transition: { duration: 0.8, ease: "easeOut" }
-  }
-};
-
-const fadeInLeft = {
-  hidden: { opacity: 0, x: -60 },
-  visible: { 
-    opacity: 1, 
-    x: 0,
-    transition: { duration: 0.8, ease: "easeOut" }
-  }
-};
-
-const fadeInRight = {
-  hidden: { opacity: 0, x: 60 },
-  visible: { 
-    opacity: 1, 
-    x: 0,
-    transition: { duration: 0.8, ease: "easeOut" }
-  }
-};
-
-const scaleIn = {
-  hidden: { opacity: 0, scale: 0.8 },
-  visible: { 
-    opacity: 1, 
-    scale: 1,
-    transition: { duration: 0.8, ease: "easeOut" }
-  }
-};
-
-const staggerContainer = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.15,
-      delayChildren: 0.3
-    }
-  }
-};
-
-const avatarVariant = {
-  hidden: { opacity: 0, scale: 0 },
-  visible: { 
-    opacity: 1, 
-    scale: 1,
-    transition: { 
-      type: "spring",
-      stiffness: 200,
-      damping: 15
-    }
-  }
-};
+const imgStars = "/assets/stars.svg";
+const imgPlusIcon = "/assets/plus-icon.svg";
+const imgArrowDown = "/assets/arrow-down.svg";
+const imgArrowDiagonal = "/assets/arrow-diagonal.svg";
+const imgShapeIcon = "/assets/shape-icon.svg";
 
 export default function HeroSection() {
   return (
-    <div className="bg-white relative w-full h-screen min-h-[700px]" data-name="Hero Section">
-      {/* Background */}
+    <div className="bg-white relative w-full min-h-screen" data-name="Hero Section">
+      {/* Background Layer */}
       <div className="absolute bg-[#fbf0ea] bottom-0 h-[487px] left-0 right-0" data-name="Background" />
       
-      {/* Container */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[1230px] h-[645px] px-8" data-name="Container">
-        
-        {/* Decorative Star Icon (top-left) */}
-        <motion.div 
-          className="absolute -left-2 -top-14 w-[234px] h-[234px] rotate-[114deg] opacity-80"
-          animate={{ 
-            rotate: [114, 134, 114],
-            scale: [1, 1.1, 1]
-          }}
-          transition={{ 
-            duration: 8, 
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
-        >
-          <div className="relative w-full h-full overflow-clip">
-            <img alt="" className="block w-full h-full" src={imgGroup2} />
+      {/* Star Icon - Top Left Decorative */}
+      <div className="absolute flex items-center justify-center left-[338.52px] w-[308.138px] h-[308.138px] top-[92.72px]">
+        <div className="flex-none rotate-[113.81deg] w-[233.69px] h-[233.69px]">
+          <div className="overflow-clip relative w-full h-full">
+            <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[234.772px] h-[233.69px] overflow-clip">
+              <img alt="" className="block w-full h-full" src={imgStars} />
+            </div>
           </div>
-        </motion.div>
+        </div>
+      </div>
 
+      {/* Main Container */}
+      <div className="absolute left-[345px] right-[345px] top-[calc(50%+25px)] -translate-y-1/2 h-[645.28px]" data-name="Container">
+        
         {/* Hero Content Wrapper */}
-        <div className="absolute bottom-0 h-[645px] left-[30px] right-[30px]">
+        <div className="absolute bottom-0 h-[645.28px] left-[30px] right-[30px]" data-name="Hero Content Wrapper">
           
           {/* Hero Content Stack */}
-          <div className="absolute bottom-0 h-[645px] left-0 right-0">
+          <div className="absolute bottom-0 h-[645.28px] left-0 right-0" data-name="Hero Content Stack">
             
-            {/* Clients Rating Wrapper (Left Side) */}
-            <motion.div 
-              className="absolute left-0 w-[16%] min-w-[200px]"
-              variants={fadeInLeft}
-              initial="hidden"
-              animate="visible"
-            >
+            {/* Left Side - Clients Rating Wrapper */}
+            <div className="absolute left-0 right-[84%] top-0 bottom-0" data-name="Clients Rating Wrapper">
               
               {/* Clients Rating Block */}
-              <div className="absolute bottom-[207px] h-[104px] w-full">
+              <div className="absolute bottom-[207px] h-[104.48px] left-0 right-0" data-name="Clients Rating Block">
                 
                 {/* Clients Image Group */}
-                <motion.div 
-                  className="absolute h-[52px] left-0 right-0 top-0"
-                  variants={staggerContainer}
-                  initial="hidden"
-                  animate="visible"
-                >
-                  {/* Image One */}
-                  <motion.div 
-                    className="absolute left-0 w-[52px] h-[52px] rounded-full top-1/2 -translate-y-1/2"
-                    variants={avatarVariant}
-                  >
-                    <div className="absolute inset-0 rounded-full overflow-hidden">
-                      <img alt="Client 1" className="w-full h-full object-cover" src={imgClientImageOne} />
-                    </div>
-                    <div className="absolute border-4 border-[#fbf0ea] inset-0 rounded-full" />
-                  </motion.div>
+                <div className="absolute h-[52.41px] left-0 right-0 top-0 overflow-clip" data-name="Clients Image Group">
                   
-                  {/* Image Two */}
-                  <motion.div 
-                    className="absolute left-[37px] w-[52px] h-[52px] rounded-full top-0"
-                    variants={avatarVariant}
-                  >
-                    <div className="absolute inset-0 rounded-full overflow-hidden">
-                      <img alt="Client 2" className="w-full h-full object-cover" src={imgClientImageTwo} />
+                  {/* Client Image One */}
+                  <div className="absolute left-0 w-[28%] top-1/2 -translate-y-1/2 aspect-square rounded-[26.21px]" data-name="Image One">
+                    <div className="absolute inset-0 rounded-[26.21px]">
+                      <div className="absolute inset-0 overflow-hidden pointer-events-none rounded-[26.21px]">
+                        <img alt="" className="absolute left-0 top-0 w-full h-full max-w-none object-cover" src={imgClientImageOne} />
+                      </div>
                     </div>
-                    <div className="absolute border-2 border-[#fbf0ea] left-0 rounded-full w-[52px] h-[52px] top-0" />
-                  </motion.div>
+                    <div className="absolute border-4 border-transparent inset-0 rounded-[26.21px]" />
+                  </div>
                   
-                  {/* Image Three */}
-                  <motion.div 
-                    className="absolute left-[74px] w-[52px] h-[52px] rounded-full top-0"
-                    variants={avatarVariant}
-                  >
-                    <div className="absolute inset-0 rounded-full overflow-hidden">
-                      <img alt="Client 3" className="w-full h-full object-cover" src={imgClientImageThree} />
+                  {/* Client Image Two */}
+                  <div className="absolute left-[37.44px] w-[52.41px] h-[52.41px] rounded-[26.21px] top-0" data-name="Image Two">
+                    <div className="absolute inset-0 rounded-[26.21px]">
+                      <div className="absolute inset-0 overflow-hidden pointer-events-none rounded-[26.21px]">
+                        <img alt="" className="absolute left-0 top-0 w-full h-full max-w-none object-cover" src={imgClientImageTwo} />
+                      </div>
                     </div>
-                    <div className="absolute border-2 border-[#fbf0ea] w-[52px] h-[52px] rounded-full" />
-                  </motion.div>
+                    <div className="absolute border-2 border-[#fbf0ea] border-solid left-0 rounded-[26.21px] w-[52.4px] h-[52.4px] top-0" />
+                  </div>
+                  
+                  {/* Client Image Three */}
+                  <div className="absolute left-[74.85px] w-[52.41px] h-[52.41px] rounded-[40px] top-0 overflow-clip" data-name="Image Three">
+                    <div className="absolute inset-0 rounded-[40px]">
+                      <div className="absolute inset-0 overflow-hidden pointer-events-none rounded-[40px]">
+                        <img alt="" className="absolute left-0 top-0 w-full h-full max-w-none object-cover" src={imgClientImageThree} />
+                      </div>
+                    </div>
+                    <div className="absolute border-2 border-[#fbf0ea] border-solid h-[52.4px] left-0 rounded-[40px] top-0 w-[52.41px]" />
+                  </div>
                   
                   {/* Plus Icon Wrap */}
-                  <motion.div 
-                    className="absolute bg-[#ff5a28] left-[111px] w-[52px] h-[52px] rounded-full top-0 flex items-center justify-center"
-                    variants={avatarVariant}
-                    whileHover={{ scale: 1.1, rotate: 90 }}
-                    whileTap={{ scale: 0.95 }}
-                  >
+                  <div className="absolute bg-[#ff5a28] left-[112.26px] w-[52.4px] h-[52.4px] rounded-[26.21px] top-0 flex items-center justify-center" data-name="Icon Wrap">
                     <div className="w-4 h-4">
-                      <img alt="Plus" className="w-full h-full" src={imgHwcWmEsAslmXx2S3Fpw22VFzq5KSvg} />
+                      <img alt="" className="block w-full h-full" src={imgPlusIcon} />
                     </div>
-                    <div className="absolute border-2 border-[#fbf0ea] left-0 rounded-full w-[52px] h-[52px] top-0" />
-                  </motion.div>
-                </motion.div>
+                    <div className="absolute border-2 border-[#fbf0ea] border-solid left-0 rounded-[26.21px] w-[52.4px] h-[52.4px] top-0" />
+                  </div>
+                </div>
                 
                 {/* Clients Text Wrap */}
-                <div className="absolute h-[36px] left-0 right-0 top-[68px]">
-                  <div className="font-satoshi font-medium text-[#0e0e0d]">
-                    <span className="text-[17.7px] leading-[28px]">12K Rating </span>
-                    <span className="text-[14.6px] leading-[25px]">(4.9 average)</span>
+                <div className="absolute h-[36.08px] left-0 right-0 top-[68.4px] overflow-clip" data-name="Clients Text Wrap">
+                  <div className="absolute font-satoshi font-medium h-[28.08px] leading-[0] left-[1.53px] right-[1.53px] text-[#0e0e0d] top-0" data-name="Text">
+                    <div className="absolute left-0 top-[14px] -translate-y-1/2 flex flex-col justify-center text-[17.7px] h-[22px] w-[90.37px]">
+                      <p className="leading-[28.08px] whitespace-pre-wrap">12K Rating </p>
+                    </div>
+                    <div className="absolute left-[90.17px] top-[15px] -translate-y-1/2 flex flex-col justify-center text-[14.6px] h-[20px] w-[94.15px]">
+                      <p className="leading-[24.96px] whitespace-pre-wrap">(4.9 average)</p>
+                    </div>
                   </div>
-                  <div className="absolute border-b border-[#2d2d2d] inset-x-0 bottom-0" />
+                  <div className="absolute border-[#2d2d2d] border-b border-solid inset-0" data-name="HorizontalBorder" />
                 </div>
               </div>
               
-              {/* Arrow Icon */}
-              <motion.div 
-                className="absolute bottom-[14px] left-[72px] w-[40px] h-[68px]"
-                animate={{ y: [0, 10, 0] }}
-                transition={{ 
-                  duration: 2, 
-                  repeat: Infinity,
-                  ease: "easeInOut"
-                }}
-              >
-                <img alt="" className="w-full h-full" src={imgYiMrHJlwikn3LzDrF5JDyGnRe8Svg} />
-              </motion.div>
-            </motion.div>
+              {/* Arrow Icon - Down */}
+              <div className="absolute bottom-[13.71px] left-[71.72px] right-[75.47px] top-[563.57px] overflow-clip" data-name="Link - Arrow Icon">
+                <div className="absolute h-[68px] left-0 top-0 w-[40px] overflow-clip">
+                  <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-[68px] w-[41px]">
+                    <img alt="" className="block w-full h-full max-w-none" src={imgArrowDown} />
+                  </div>
+                </div>
+              </div>
+            </div>
 
-            {/* Hero Description Block (Right Side) */}
-            <div className="absolute left-[27%] right-0 top-1/2 -translate-y-1/2 h-[645px]">
+            {/* Right Side - Hero Description Block */}
+            <div className="absolute left-[27%] right-0 top-1/2 -translate-y-1/2 h-[645.28px]" data-name="Hero Description Block">
               
               {/* Building Image */}
-              <motion.div 
-                className="absolute left-0 right-[316px] inset-y-0"
-                variants={scaleIn}
-                initial="hidden"
-                animate="visible"
-              >
-                <div className="absolute inset-0 overflow-hidden">
-                  <motion.img 
-                    alt="Building" 
-                    className="w-full h-full object-cover" 
-                    src={imgImageBlockImageBuilding}
-                    whileHover={{ scale: 1.05 }}
-                    transition={{ duration: 0.4 }}
-                  />
+              <div className="absolute left-0 right-[316.01px] top-0 bottom-0" data-name="Image Block">
+                <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                  <img alt="" className="absolute h-full left-0 top-0 w-full max-w-none object-cover" src={imgImageBlockImageBuilding} />
                 </div>
-              </motion.div>
+              </div>
               
               {/* Text Block */}
-              <motion.div 
-                className="absolute right-0 w-[32%] min-w-[272px] inset-y-0"
-                variants={fadeInRight}
-                initial="hidden"
-                animate="visible"
-              >
+              <div className="absolute left-[68%] right-0 top-0 bottom-0" data-name="Text Block">
                 
                 {/* Description Text */}
-                <motion.div 
-                  className="absolute top-[317px] left-0 font-satoshi font-medium text-[17px] leading-[28px] text-[#2d2d2d]"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.6, duration: 0.8 }}
-                >
-                  <p className="mb-0">Turning your vision into reality by</p>
-                  <p className="mb-0">transforming spaces into perfect</p>
-                  <p>dream homes with expert care.</p>
-                </motion.div>
+                <div className="absolute left-0 top-[317.12px] -translate-y-1/2 flex flex-col justify-center font-satoshi font-medium leading-[28.08px] text-[#2d2d2d] text-[17px] h-[78.15px] w-[271.84px] whitespace-pre-wrap">
+                  <p className="mb-0">Turning your vision into reality by </p>
+                  <p className="mb-0">transforming spaces into perfect </p>
+                  <p className="mb-0">dream homes with expert care.</p>
+                </div>
                 
-                {/* Primary Button */}
-                <motion.button 
-                  className="absolute bg-[#ff5a28] h-[56px] left-0 top-[439px] w-[212px] flex items-center justify-between px-6 hover:bg-[#ff6a38] transition-colors"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.8, duration: 0.8 }}
-                  whileHover={{ 
-                    scale: 1.05,
-                    boxShadow: "0 10px 30px rgba(255, 90, 40, 0.3)"
-                  }}
-                  whileTap={{ scale: 0.98 }}
-                >
-                  <span className="font-inter font-medium text-[15px] text-white">Explore Properties</span>
-                  <motion.div 
-                    className="-rotate-45 w-6 h-6"
-                    whileHover={{ rotate: 0, x: 3, y: -3 }}
-                  >
-                    <img alt="" className="w-full h-full" src={imgSvg} />
-                  </motion.div>
-                </motion.button>
+                {/* Primary Button - Explore Properties */}
+                <div className="absolute bg-[#ff5a28] h-[56px] left-0 top-[439.28px] w-[212.31px] overflow-clip cursor-pointer hover:bg-[#ff6a38] transition-colors" data-name="Link - Primary">
+                  {/* Arrow Icon in Button */}
+                  <div className="absolute top-[11.03px] right-[19.02px] bottom-[11.03px] left-[159.35px] flex items-center justify-center">
+                    <div className="-rotate-45 flex-none w-[24px] h-[24px]">
+                      <div className="relative w-full h-full">
+                        <img alt="" className="block w-full h-full max-w-none" src={imgArrowDiagonal} />
+                      </div>
+                    </div>
+                  </div>
+                  {/* Button Text */}
+                  <div className="absolute left-[24px] top-[27.99px] -translate-y-1/2 flex flex-col justify-center font-inter font-medium h-[19.2px] leading-[0] text-[15px] text-white w-[132.51px]">
+                    <p className="leading-[19.2px] whitespace-pre-wrap">Explore Properties</p>
+                  </div>
+                </div>
                 
-                {/* Decorative Shapes */}
-                <motion.div 
-                  className="absolute top-[100px] right-0 -rotate-[69deg] w-[27px] h-[22px]"
-                  animate={{ rotate: [-69, -49, -69] }}
-                  transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                >
-                  <img alt="" className="w-full h-full" src={imgFmfUPpgFemm7Le8JZm8P2Rj8GMeSvg} />
-                </motion.div>
+                {/* Decorative Shape - Top Right */}
+                <div className="absolute left-[244.52px] right-[-1.43px] top-[99.59px] bottom-[512.6px] flex items-center justify-center">
+                  <div className="-rotate-[69deg] flex-none h-[22px] w-[27px]">
+                    <div className="overflow-clip relative w-full h-full">
+                      <div className="absolute h-[22px] left-0 top-0 w-[27px] overflow-clip">
+                        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-[22px] w-[27px]">
+                          <img alt="" className="block w-full h-full max-w-none" src={imgShapeIcon} />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
                 
-                <motion.div 
-                  className="absolute bottom-0 left-[126px] w-[27px] h-[22px]"
-                  animate={{ rotate: [0, 20, 0] }}
-                  transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-                >
-                  <img alt="" className="w-full h-full" src={imgFmfUPpgFemm7Le8JZm8P2Rj8GMeSvg} />
-                </motion.div>
-              </motion.div>
+                {/* Decorative Shape - Bottom */}
+                <div className="absolute left-[125.88px] right-[120.42px] top-[623.28px] bottom-0 overflow-clip">
+                  <div className="absolute h-[22px] left-0 top-0 w-[27px] overflow-clip">
+                    <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-[22px] w-[27px]">
+                      <img alt="" className="block w-full h-full max-w-none" src={imgShapeIcon} />
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 
           {/* Hero Title */}
-          <motion.div 
-            className="absolute top-0 left-1/2 -translate-x-1/2 text-center font-inter font-black text-[#0f0e0e]"
-            variants={fadeInUp}
-            initial="hidden"
-            animate="visible"
-          >
-            <motion.h1 
-              className="text-[78px] leading-[104px] mb-0"
-              initial={{ opacity: 0, y: 40 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2, duration: 0.8 }}
-            >
-              Transforming Spaces,
-            </motion.h1>
-            <motion.h1 
-              className="text-[76px] leading-[104px] mt-0"
-              initial={{ opacity: 0, y: 40 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4, duration: 0.8 }}
-            >
-              Realizing <motion.span 
-                className="text-[#ff5a28]"
-                animate={{ 
-                  textShadow: [
-                    "0 0 0px rgba(255, 90, 40, 0)",
-                    "0 0 20px rgba(255, 90, 40, 0.5)",
-                    "0 0 0px rgba(255, 90, 40, 0)"
-                  ]
-                }}
-                transition={{ duration: 3, repeat: Infinity }}
-              >Dreams</motion.span>
-            </motion.h1>
-          </motion.div>
+          <div className="absolute font-inter font-black h-[208px] leading-[0] left-[152px] right-[152px] text-[#0f0e0e] text-center top-[-0.77px]" data-name="Hero Title">
+            {/* First Line */}
+            <div className="absolute left-[calc(50%+11.5px)] top-[52px] -translate-x-1/2 -translate-y-1/2 flex flex-col justify-center text-[77.8px] h-[100px] w-[888.96px]">
+              <p className="leading-[104px] whitespace-pre-wrap">Transforming Spaces, </p>
+            </div>
+            {/* Second Line */}
+            <div className="absolute left-[calc(50%+0.09px)] top-[156px] -translate-x-1/2 -translate-y-1/2 flex flex-col justify-center text-[0px] h-[100px] w-[688.22px]">
+              <p className="text-[76.3px] whitespace-pre-wrap">
+                <span className="leading-[104px]">Realizing </span>
+                <span className="leading-[104px] text-[#ff5a28]">Dreams</span>
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </div>

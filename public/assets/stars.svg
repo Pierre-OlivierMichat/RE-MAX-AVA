@@ -1,0 +1,13 @@
+<svg width="309" height="309" viewBox="0 0 309 309" fill="none" xmlns="http://www.w3.org/2000/svg">
+<mask id="mask0_1_18" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="309" height="309">
+<path d="M308.138 94.3344L213.804 308.138L-2.01199e-05 213.804L94.3344 -6.15956e-06L308.138 94.3344Z" fill="white"/>
+</mask>
+<g mask="url(#mask0_1_18)">
+<mask id="mask1_1_18" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="309" height="309">
+<path d="M213.804 308.138L308.138 94.3344L94.3344 -6.15956e-06L-2.01199e-05 213.804L213.804 308.138Z" fill="white"/>
+</mask>
+<g mask="url(#mask1_1_18)">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M240.389 199.643L246.027 186.863L171.996 154.199L247.441 124.948L242.391 111.924L166.946 141.176L199.611 67.1442L186.831 61.5055L154.167 135.537L124.916 60.0917L111.892 65.1419L141.144 140.586L67.1121 107.922L61.4734 120.702L135.505 153.366L60.0596 182.617L65.1089 195.64L140.554 166.389L107.89 240.421L120.67 246.059L153.334 172.028L182.585 247.473L195.609 242.424L166.357 166.979L240.389 199.643Z" fill="#FFF7F4"/>
+</g>
+</g>
+</svg>
